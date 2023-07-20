@@ -1,0 +1,7 @@
+{
+    "/angular":{
+        "target":"http://localhost:8081/onlineOrder",
+        "secure": false,
+        "changeOrigin":true
+    }
+}

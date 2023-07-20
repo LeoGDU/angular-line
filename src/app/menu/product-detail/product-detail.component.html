@@ -1,0 +1,119 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+<div class="container mainArea">
+	<!-- 商品資訊 -->
+	<h1 class=""></h1>
+	<div class="card" *ngIf="detail">
+	  <img src="assets/assets/img/06.jpg" class="card-img-top" alt="...">
+	  <div class="card-body">
+	  	<h5 class="card-title">{{detail.productName}}</h5>
+	  	<input type="hidden" id="productName"  name="productName" [ngModel]="detail.productName" formControlName="productName">
+	  	<input type="hidden" id="productId" name="productId" [ngModel]="detail.productId" formControlName="productId">
+        <div class="row align-items-center" id="chooseNum">
+          <div class="col-7 ">
+	            <a style="padding:5px" (click)="numMinus();"><i class="fa-solid fa-minus"></i></a>
+	          <input type="text" id="num" name="num" style="width:40px;text-align:center" [ngModel]="num" formControlName="num" readonly>
+	            <a style="padding:5px" (click)="numPlus();"><i class="fa-solid fa-plus"></i></a>
+          </div>
+          <div class="col-auto"><span class="fs-2">${{priceM}}</span></div>
+        	<input type="hidden" id="finalPrice" name="finalPrice" formControlName="finalPrice" [ngModel]="finalPrice1">
+            <input type="hidden" id="productSizeId" name="productSizeId" formControlName="productSizeId" [ngModel]="finalSizeId1"> 
+        </div>
+    	<p class="card-text">{{detail.productDesc}}</p>
+	  </div>
+	</div>
+	<!-- 份量 -->
+	<div class="card">
+	  <div class="card-body">
+	    <h5 class="card-title">份量</h5>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="size" id="radioSizeM" value="M" style="border: 1px solid #ffc107;" formControlName="size" (change)="onChange($event.target.value);" checked>
+		  <label class="form-check-label" for="radioSizeM">
+		  {{sizeM}}
+		  </label>
+		</div>
+			<div *ngIf="sizeL" class="form-check">
+			  <input class="form-check-input" type="radio" name="size" id="radioSizeL" value="L" style="border: 1px solid #ffc107;" formControlName="size" (change)="onChange($event.target.value);">
+			  <label class="form-check-label" for="radioSizeL">
+			    {{sizeL}} (+{{priceL - priceM}}元)
+			  </label>
+			</div>
+	  </div>
+	</div>
+	<!-- 甜度 -->
+	<div class="card">
+	  <div class="card-body">
+	    <h5 class="card-title">甜度</h5>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="sweet" id="radioSweet1" value="全糖" style="border: 1px solid #ffc107;" formControlName="sweet" >
+		  <label class="form-check-label" for="radioSweet1">
+		    全糖
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="sweet" id="radioSweet2" value="半糖" style="border: 1px solid #ffc107;" formControlName="sweet" checked>
+		  <label class="form-check-label" for="radioSweet2">
+		    半糖
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="sweet" id="radioSweet3" value="微糖" style="border: 1px solid #ffc107;" formControlName="sweet">
+		  <label class="form-check-label" for="radioSweet3">
+		    微糖
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="sweet" id="radioSweet4" value="無糖" style="border: 1px solid #ffc107;" formControlName="sweet">
+		  <label class="form-check-label" for="radioSweet4">
+		    無糖
+		  </label>
+		</div>
+	  </div>
+	</div>
+	<!-- 冰塊 -->
+	<div class="card">
+	  <div class="card-body">
+	    <h5 class="card-title">冰塊</h5>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="ice" id="radioIce1" value="去冰" style="border: 1px solid #ffc107;" checked formControlName="ice">
+		  <label class="form-check-label" for="radioIce1">
+		    去冰
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="ice" id="radioIce2"  value="微冰" style="border: 1px solid #ffc107;" formControlName="ice">
+		  <label class="form-check-label" for="radioIce2">
+		    微冰
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="ice" id="radioIce3"  value="少冰" style="border: 1px solid #ffc107;" formControlName="ice">
+		  <label class="form-check-label" for="radioIce3">
+		    少冰
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="ice" id="radioIce4"  value="正常冰" style="border: 1px solid #ffc107;" formControlName="ice">
+		  <label class="form-check-label" for="radioIce4">
+		    正常冰
+		  </label>
+		</div>
+		<div class="form-check">
+		  <input class="form-check-input" type="radio" name="ice" id="radioHot1"  value="熱" style="border: 1px solid #ffc107;" formControlName="ice">
+		  <label class="form-check-label" for="radioHot1">
+		    熱
+		  </label>
+		</div>
+	  </div>
+	</div>
+	<!-- 按鈕(固定在最下面) -->
+	<div class="fixed-bottom" style="height: 70px;margin-bottom:10px;bottom: 50px !important;">
+		<div class="row" style="height: 100%;">
+			<div class="btn-group" role="group" aria-label="Basic example">
+				<button type="button" class="btn" style="background: #FFFAF2;font-weight:bold;" routerLink="/onlineOrder/order" >上一步</button>
+				<button type="submit" class="btn" style="background: orange;font-weight:bold;color:white">加入購物車</button>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+<div style="height: 70px"></div>

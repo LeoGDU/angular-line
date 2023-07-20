@@ -1,0 +1,48 @@
+.custom-font2{
+	font-family: 'Lugrasimo', cursive;
+	font-family: 'Pacifico', cursive;
+	font-family: 'Pangolin', cursive;
+}
+
+.mdi {
+    display: inline-block;
+    font: normal normal normal 24px/1 "Material Design Icons";
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+
+.mdi-arrow-up:before {
+    content: '↑';
+}
+
+.mdi-star:before {
+	content: "★";
+}
+
+.mdi-star-circle:before {
+	content: "★";
+}
+
+.mdi-star-half:before {
+	content: "★";
+}
+
+.mdi-star-off:before {
+	content: "★";
+}
+
+.mdi-star-outline:before {
+	content: "★";
+}
+
+.mdi-phone:before {
+    content: "☎";
+}
+
+.mdi-email:before {
+    content: "✉️";
+}
+        

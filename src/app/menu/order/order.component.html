@@ -1,0 +1,22 @@
+<div style="height:60px"></div>
+	<!-- Header-->
+	<img class=" " style="width:100%" src="assets/assets/img/banner.jpg" alt="..." />
+	<a id="gotop"  class="shopCarIcon" routerLink="/onlineOrder/shopCar" >
+        <div class="nav-counter nav-counter-blue" *ngIf="shopCarNum<10 && shopCarNum >= 1">{{shopCarNum}}</div>
+    <i class="fa-solid fa-cart-shopping"></i></a>
+	<!-- Content section 1-->
+			<div class="card product-card" *ngFor="let list of data">
+				<div class="card-header" style="background: #FFFAF2">
+					<h4 class="category-title col-7">{{list.productCategoryName}}</h4> 
+					<span class="col-2">M</span> 
+					<span class="col-2">L</span> 
+				</div>
+				<ul *ngFor="let map of list.dataList" class="list-group list-group-flush">
+					<li class="list-group-item" (click)="productDetail(map.PRODUCT_ID)">
+						<span class="col-7">{{map.PRODUCT_NAME}}</span> 
+						<span class="col-2">{{map.price1}}</span> 
+						<span class="col-2">{{map.price2}}</span> 
+					</li>
+				</ul>
+			</div>
+	<div style="height: 80px"></div>

@@ -1,0 +1,20 @@
+<footer id="footer">
+	<div class="bg-gray fixed-bottom" style="height: 60px">
+		<div class="" style="height: 100%;background:#FFFAFA;color:gray">
+			<div class="col-4 center " style="margin-top:5px;float:left;"><a class="iconClass" id="shopCar" routerLink="/onlineOrder/order">
+				<i class="fa-solid fa-utensils " style="color:gray;"></i></a><br>點餐</div>
+			<div class="col-4 center" style="margin-top:5px;float:left;">
+				<a class="iconClass" id="shopCar" routerLink="/onlineOrder/shopCar">
+					<div class="nav-counter nav-counter-blue" *ngIf="shopCarNum<10 && shopCarNum >= 1" >{{shopCarNum}}</div>
+					<div class="nav-counter nav-counter-blue" *ngIf="shopCarNum>10" style="width:26px">{{shopCarNum}}</div>
+				<i class="fa-solid fa-cart-shopping " style="color:gray;"></i>
+				</a>
+			<br>購物車</div>	
+			<div class="col-4 center" style="margin-top:5px;float:left;">
+				<a routerLink="/onlineOrder/orderHistory" >
+				<i class="fa-sharp fa-solid fa-clipboard-check iconClass" style="color:gray;margin-left: 25px;"></i>
+            	</a>
+			<br>歷史訂單</div>
+		</div>
+	</div>
+</footer>
