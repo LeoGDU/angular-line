@@ -1,27 +1,25 @@
-# Line
+#angular-line
+利用angular前端框架來實作模擬一家咖啡簡餐店的行動預點功能的前端頁面！
+搭配Repository - lineOrder 後端Api 完成 前後端分離 - 後端操作商品等資訊、呼叫Line Pay api等功能
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
+頁面功能說明：
+order - 店家menu (依照飲料種類分別列出各式飲料及價錢)
 
-## Development server
+product-detail - 商品詳細資訊(選擇冰塊甜度、中杯大杯及杯數)、將商品購物車
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+shopCar - 購物車頁面(呈現所選飲品及總價格、總數量)
 
-## Code scaffolding
+order-check - 選擇取餐時間、商品確認
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+order-check-pay - 最終訂單訊息確認
 
-## Build
+confirm-api - 等待Line Pay轉跳頁面
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+sucess-pay - Line Pay付款後的訂單成功頁面
 
-## Running unit tests
+order-history - 歷史訂單頁面(曾經完成的訂單)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+order-history-detail - 歷史訂單的詳細資訊(詳細商品資訊、訂單時間)
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+網頁流程：
+order(瀏覽菜單) -> product-detail(選取飲品資訊) -> shopCar(查看購物車) -> order-check(選擇取餐時間) -> order-check-pay(最終訂單訊息確認) -> confirm-api(等待轉跳LINE PAY頁面) -> sucess-pay(訂單成功)
