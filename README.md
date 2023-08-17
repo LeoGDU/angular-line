@@ -1,4 +1,4 @@
-#angular-line
+# angular-line
 利用angular前端框架來實作模擬一家咖啡簡餐店的行動預點功能的前端頁面！
 搭配Repository - lineOrder 後端Api 完成 前後端分離 - 後端操作商品等資訊、呼叫Line Pay api等功能
 
